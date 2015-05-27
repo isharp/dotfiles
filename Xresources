@@ -1,0 +1,109 @@
+!URxvt*foreground: #dddddd
+!URxvt*background: #151515
+
+URxvt.foreground: #FFFFFF
+URxvt.background: #000000
+
+!*color0: #000000
+!*color1: #C75646
+!*color2: #8EB33B
+!*color3: #D0B03C
+!*color4: #72B3CC
+!*color5: #C8A0D1
+!*color6: #218693
+!*color7: #B0B0B0
+!*color8: #5D5D5D
+!*color9: #E09690
+!*color10: #CDEE69
+!*color11: #FFE377
+!*color12: #9CD9F0
+!*color13: #FBB1F9
+!*color14: #77DFD8
+!*color15: #F7F7F7
+
+
+!red
+*color1:     #FF9F95
+*color9:     #FF8D80
+!green
+*color2:     #E2FFC7
+*color10:    #DBFFB3
+!yellow
+*color3:     #FFFFB9
+*color11:    #FFBE64
+!blue
+*color4:     #A8CEEA
+*color12:    #7EB6FF
+!magenta
+*color5:     #E2B5CC
+*color13:    #E296FF
+!cyan
+*color6:     #C2EFFF
+*color14:    #9CE9FF
+!black
+*color0:     #606060
+*color8:     #404040
+!white
+*color7:     #dddddd
+*color15:    #ffffff
+
+Xcursor.theme:Human
+Xcursor.size: 16
+
+URxvt.tabbed.tabbar-fg: 5
+URxvt.tabbed.tabbar-bg: -1
+URxvt.tabbed.tab-fg:    7
+URxvt.tabbed.tab-bg:    -1
+URxvt*cursorColor:        #dddddd
+URxvt*cursorColor2:       #151515
+URxvt.termName: xterm-256color
+URxvt*loginShell:true
+URxvt*scrollBar:false
+URxvt*saveLines:32767
+URxvt.cursorBlink:true
+URxvt*title: Terminal
+URxvt*scrollTtyKeypress:true
+URxvt*scrollTtyOutput:false
+URxvt*scrollWithBuffer:false
+URxvt*matcher.button:1
+URxvt.scrollstyle:plain
+URxvt.secondaryScroll:true
+URxvt.font: xft:ProFont:size=9
+URxvt.boldFont: xft:ProFont:size=9
+URxvt.borderLess:false
+URxvt*colorBD:           #ffffff
+URxvt*colorUL:           #ffff99
+URxvt.perl-ext-common:  default,matcher,font-size
+URxvt.keysym.C-2: command:\033]710;xft:Ubuntu:style=Regular:size=12:antialias=true:hinting=true\007 \033]711;xft:Ubuntu:style=Regular:size=12:antialias=true:hinting=true\007
+URxvt.keysym.C-1: command:\033]710;xft:Inconsolata-dz for Powerline:style=Regular:size=12:antialias=true:hinting=true\007 \033]711;xft:Inconsolata-dz for Powerline:style=Regular:size=12:antialias=true:hinting=true\007
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.font-size.step: 2
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button:   1
+URxvt.iso14755:         False
+URxvt.meta8:false
+
+Xft.autohint: 1
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgba
+
+XTerm*faceName: Ubuntu
+UXTerm*faceName: Ubuntu
+XTerm*allowBoldFonts: false
+XTerm*faceSize: 10.5
+XTerm*utf8: 1
+XTerm*SaveLines: 9000
+XTerm*cursorColor: white;
+XTerm*cursorBlink: true
+*VT100*translations: #override Ctrl <Btn1Up>: exec-formatted("firefox '%t'", PRIMARY)
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*colorBDMode: true
+XTerm*colorULMode: true
+XTerm*Background:black
+XTerm*Foreground:white

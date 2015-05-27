@@ -1,0 +1,222 @@
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod3
+
+gap_size 4
+for_window [class="^.*"] border pixel 1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1i
+font -*-profont-*-r-normal--12-*-*-*-*-*-*-*
+
+#colors						border  backgr. text    indicator
+client.background					#151515
+client.focused				#42717B #dddddd #151515 #dddddd
+client.focused_inactive		#000000 #000000 #6d878d #484e50
+client.unfocused			#151515 #000000 #6d878d #292d2e
+client.urgent				#dddddd #dddddd #ffffff #900000
+
+popup_during_fullscreen smart
+focus_follows_mouse no
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec urxvtcd
+# Cycle between workspaces
+bindsym $mod+n workspace next
+bindsym $mod+p workspace prev
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id "/usr/local/bin/run-recent"
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# bedtime
+#bindsym $mod+Shift+B exec /home/ifs/scripts/sleep.sh
+
+# change focus (vim style)
+bindsym $mod+h focus left
+bindsym $mod+j focus down 
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window 
+# default keys altered to match those of vim 
+bindsym $mod+Shift+H move left 1 px
+bindsym $mod+Shift+J move down 1 px
+bindsym $mod+Shift+K move up 1 px
+bindsym $mod+Shift+L move right 1 px
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left 1 px
+bindsym $mod+Shift+Down move down 1 px
+bindsym $mod+Shift+Up move up 1 px
+bindsym $mod+Shift+Right move right 1 px
+
+#split in horiZontal orientation (Tall) 
+# need to change this because "Mod+h" no longer free
+bindsym $mod+Shift+v split h 
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+shift+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+
+#exec --no-startup-id "nohup /home/ifs/scripts/arrange_ws >/dev/null 2>&1 &"
+
+#exec --no-startup-id "nohup compton -f -I 0.02 -O 0.02 -D 3 --sw-opti >/dev/null 2>&1 &"
+
+exec --no-startup-id "nohup compton --sw-opti >/dev/null 2>&1 &"
+
+#scratch urxvtc instance
+exec --no-startup-id urxvt -name 'scratchpad_urxvt' -g 130x24
+for_window [instance="scratchpad_urxvt"] move scratchpad 
+bindsym $mod+o [instance="scratchpad_urxvt"] scratchpad show
+
+# switch to workspace
+bindsym $mod+1 workspace one
+bindsym $mod+2 workspace two
+bindsym $mod+3 workspace three
+bindsym $mod+4 workspace four
+bindsym $mod+5 workspace five
+bindsym $mod+6 workspace six
+bindsym $mod+7 workspace seven
+bindsym $mod+8 workspace eight
+bindsym $mod+9 workspace nine
+bindsym $mod+0 workspace zero
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace one
+bindsym $mod+Shift+2 move container to workspace two
+bindsym $mod+Shift+3 move container to workspace three
+bindsym $mod+Shift+4 move container to workspace four
+bindsym $mod+Shift+5 move container to workspace five
+bindsym $mod+Shift+6 move container to workspace six
+bindsym $mod+Shift+7 move container to workspace seven
+bindsym $mod+Shift+8 move container to workspace eight
+bindsym $mod+Shift+9 move container to workspace nine
+bindsym $mod+Shift+0 move container to workspace zero
+
+bindsym $mod+Shift+n move container to workspace next
+bindsym $mod+Shift+p move container to workspace prev
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+f exec nautilus
+bindsym $mod+shift+d exec gksudo nautilus
+bindsym $mod+t exec tray
+bindsym $mod+i exec /usr/local/bin/fir2
+bindsym $mod+g exec ~/scripts/firefox-guest.sh
+bindsym $mod+c exec speedcrunch
+bindsym Mod4+Shift+i exec amixer set Master 100% unmute
+bindsym Mod4+Shift+u exec amixer set Master 0% unmute
+
+workspace_auto_back_and_forth yes
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+# These bindings trigger as soon as you enter the resize mode
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+		bindsym h resize shrink left 1 px
+		bindsym Shift+H resize grow left 1 px
+
+		bindsym j resize shrink down 1 px
+		bindsym Shift+J resize grow down 1 px
+
+		bindsym k resize shrink up 1 px
+		bindsym Shift+K resize grow up 1 px
+
+		bindsym l resize shrink right 1 px
+		bindsym Shift+L resize grow right 1 px
+
+# same bindings, but for the arrow keys
+		bindsym Left resize shrink left 1 px
+		bindsym Shift+Left resize grow left 1 px
+
+		bindsym Down resize shrink down 1 px
+		bindsym Shift+Down resize grow down 1 px
+
+		bindsym Up resize shrink up 1 px
+		bindsym Shift+Up resize grow up 1 px
+
+		bindsym Right resize shrink right 1 px
+		bindsym Shift+Right resize grow right 1 px 
+# back to normal: Enter or Escape
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+		position top
+		tray_output none
+		status_command ~/.i3/conky.sh
+		colors { 
+			separator #dddddd
+			background #151515
+			statusline #dddddd
+			focused_workspace #404040 #404040 #ffffff
+			active_workspace #dddddd #101010
+			inactive_workspace #151515 #151515 #dddddd
+			urgent_workspace #2e3436 #9a878f
+		}
+}
+
+
+
+for_window [class="(?i)iceweasel"] border none 
+for_window [class="(?i)firefox"] border none
+for_window [class="(?i)dwb"] border none 
+for_window [class="URxvt"] floating enable
+for_window [class="(?i)urxvt"] border pixel 1
+for_window [class="(?i)urxvtc"] border pixel 1
+for_window [class="(?i)urxvtd"] border pixel 1
+for_window [class="(?i)xterm"] border 1pixel 
+for_window [class="(?i)viewnior"] border none
+for_window [class="(?i)nautilus"] border none
+for_window [class="(?i)feh"] border none
+for_window [class="(?i)mupdf"] border none
+for_window [class="(?i)thunar"] border none
+for_window [class="(?i)File Manager"] border pixel 2
+for_window [class="(?i)Nm-applet"] border none 
+for_window [class="(?i)gameSDL"] floating enable
+for_window [class="(?i)speedcrunch"] floating enable

@@ -1,0 +1,92 @@
+[iconset]
+author: Screaming Bull and Mr. Brsev. MagIcons adaption by Alexibaba
+license: GPL
+version: 1
+about: Simple SVG Icon Theme for Gnome.
+
+[color_1]
+substitute: ececec
+text: Main, Light
+
+[color_2]
+substitute: 888888
+text: Main, Dark
+
+[color_3]
+substitute: ffffff
+text: Border, Light
+
+[color_4]
+substitute: 6a6a6a
+text: Border, Dark
+
+[color_5]
+substitute: 333333
+text: Shaddow
+
+[preview_1]
+path: magicons-preview/user-home.svg
+
+[preview_2]
+path: magicons-preview/x-office-presentation.svg
+
+[preview_3]
+path: magicons-preview/drive-optical.svg
+
+
+[scheme_1]
+name: Original
+color_5: 333333
+color_4: 6a6a6a
+color_3: ffffff
+color_2: 888888
+color_1: ececec
+
+[scheme_2]
+name: Sky
+color_5: 848484
+color_4: 425e7b
+color_3: 7a91a7
+color_2: 5c82ab
+color_1: 9cbbd9
+
+[scheme_3]
+name: Cheese
+color_5: a9a9a9
+color_4: bb8f12
+color_3: cda033
+color_2: edd563
+color_1: fff96a
+
+[scheme_4]
+name: Kitty
+color_5: 797979
+color_4: 701e2d
+color_3: ee4578
+color_2: ff7ebb
+color_1: ffdbe7
+
+[scheme_5]
+name: Fire
+color_1: ff5c5c
+color_2: c30000
+color_3: a00000
+color_4: 690000
+color_5: 777777
+
+[scheme_6]
+name: Purple
+color_1: bd97b9
+color_2: ad7fa8
+color_3: 75507b
+color_4: 5c3566
+color_5: 777777
+
+[scheme_7]
+name: Copper
+color_5: cccccc
+color_4: 665335
+color_3: cf8c58
+color_2: c07207
+color_1: ffc776
+

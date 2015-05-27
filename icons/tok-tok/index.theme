@@ -1,0 +1,33 @@
+[Icon Theme]
+Name=Tok-tok_pinktok
+Comment=created by BluePal
+
+Directories=scalable/places,scalable/devices,scalable/status,scalable/mimetypes
+
+[scalable/devices]
+Size=128
+Context=Devices
+Type=scalable
+MinSize=1
+MaxSize=256
+
+[scalable/mimetypes]
+Size=128
+Context=Mimetypes
+Type=scalable
+MinSize=1
+MaxSize=256
+
+[scalable/status]
+Size=64
+Context=Status
+Type=scalable
+MinSize=1
+MaxSize=256
+
+[scalable/places]
+Size=128
+Context=Places
+Type=scalable
+MinSize=1
+MaxSize=256

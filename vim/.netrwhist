@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/ifs/.mozilla/firefox/xb0306ro.default/chrome'
+let g:netrw_dirhist_2='/home/ifs/prog/302/old/lab2'
+let g:netrw_dirhist_3='/home/ifs/prog/302/old/lab2/prob1'
+let g:netrw_dirhist_4='/home/ifs/.vim'
+let g:netrw_dirhist_5='/home/ifs/.vim/ftplugin'
+let g:netrw_dirhist_6='/home/ifs/.vim/ftplugin/latex-suite'
+let g:netrw_dirhist_7='/home/ifs'
+let g:netrw_dirhist_8='/home'
+let g:netrw_dirhist_9='/'

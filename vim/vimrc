@@ -1,0 +1,184 @@
+" ~/.vimrc
+"ver. 1.04
+" Maintainer: Issac Sharp
+"------------------------
+
+" ------- GENERAL DEFAULTS AND CONDITIONAL SETTINGS -------
+
+" Set standard vim defaults
+set nocompatible
+colorscheme my-default
+highlight Search ctermbg=black  ctermfg=white
+
+" Go plug-ins
+set runtimepath+=$GOROOT/misc/vim
+
+" Set filetype detection, plugins, and indent on.
+syntax enable
+
+if has('gui_running')
+	colorscheme slate
+endif
+
+" Restore cursor position
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
+
+if match($TERM, "screen")!=-1
+	set term=xterm
+endif
+
+" ------- SET THE FOLLOWING OPTIONS UNCONDITIONALLY -------
+
+set listchars=tab:\|\
+set nolist
+set clipboard=unnamedplus
+"set noexpandtab " Use tabs for tabs.
+set expandtab
+set autoindent " Set autoindenting on.
+set bs=2 " Backspace, this is the same as :set backspace=indent,eol,start.
+set ruler " Show the cursor position.
+set scrolloff=5 " Show 5 lines above/below the cursor when scrolling.
+set showcmd " Shows the command in the last line of the screen.
+set autoread " Read files when they've been changed outside of Vim.
+set hidden " Hide a buffer when it's abandoned.
+set history=1000 " Number of command lines stored in the history tables::
+set t_Co=8
+set tabstop=4
+set report=0
+set mouse=r
+set restorescreen
+set confirm
+set statusline=%F%m%r%h%w\ \ \ \ Line:\ %l/%L[%p%%]\ \ \ \ Col:\ %v\ \ \ \ Format:\ %{&ff}\ \ \ \ Type:\ %Y
+set novisualbell
+set noerrorbells
+set t_vb=
+set matchtime=2 " Time to show matching parent in 10ths of a sec.
+set showmatch " Show matching parens.
+set nobackup
+"set backup
+"set backupdir=/home/ifs/.vimtmp
+set wildmode=longest,list " File and directory matching mode.
+set diffopt=vertical
+set hlsearch
+set ignorecase
+set smartcase
+set laststatus=2 " Always show the statusline
+set grepprg=grep\ -nH\ $* "LaTeX stuff"
+set nocursorcolumn
+set nocursorline
+let g:tex_flavor = "latex"
+
+
+" ------- KEY MAPPINGS -------
+
+"Increase productivity by several orders of magnitude by remapping ESC
+inoremap jj <ESC>
+
+" ins-special-keys
+inoremap <C-W> <C-V>
+
+" CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+
+" CTRL-V and SHIFT-Insert are Paste
+inoremap <C-V>   	<ESC>"+gp
+inoremap <S-Insert>  	<ESC>"+gp
+nnoremap <C-V>   	<ESC>"+gp
+nnoremap <S-Insert>  	<ESC>"+gp
+vnoremap <C-V>   	<ESC>"+gp
+vnoremap <S-Insert>  	<ESC>"+gp
+
+" 'Ex-mode' cammand editing motions made easier with ctrl
+cnoremap <C-H> <Left>
+cnoremap <C-L> <Right>
+cnoremap <C-J> <Down>
+cnoremap <C-K> <Up>
+cnoremap <C-N> <S-Right>
+cnoremap <C-P> <S-Left>
+
+" a grep search/replace regex macro; has convenient delimiters, too
+noremap '; :%s:::gc<Left><Left><Left><Left>
+
+" use ctrl-f to format file
+map <c-f> ggVG$!fmt -w 80<cr><ESC>gg
+
+" Go to next (gcc linting) error in location list
+nnoremap  <TAB>	:lne<Return>
+
+" Remove whitespace
+cmap WS DeleteTrailingWhitespace
+
+" Insert signature
+cmap SIG .read !cat \/home\/ifs\/\.footer
+
+" Insert signature with random fortune
+cmap RS .read !\/home\/ifs\/\.rsig
+
+" Avoid accidental help menu inquisitions
+nmap <F1> <ESC>
+map <F1> <ESC>
+imap <F1> <ESC>
+
+map <Leader>df :set list<CR>
+map <Leader>fd :set nolist<CR>
+
+" Move between tabs
+map <C-N> :tabnext<CR>
+map <C-P> :tabprevious<CR>
+
+
+" ------- COMMANDS, FUNCTIONS, PLUGINS, AND ASSOCIATED MAPPINGS -------
+
+" Disable autocommenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Spellchecking mode on or off for either code or prose
+command! Prose setlocal spell spelllang=en
+command! Code  setlocal nospell
+
+command! WRIT call WritToggle()
+nnoremap <C-\> :WRIT<cr>
+nnoremap <S-\> gggqG
+
+let s:writ = 0
+
+function! WritToggle()
+	if s:writ
+		let s:writ = 0
+		set foldcolumn=0
+	else
+		let s:writ = 1
+		setlocal nonumber
+		setlocal norelativenumber
+		setlocal textwidth=80
+		setlocal wrapmargin=0
+		set foldcolumn=10
+		highlight FoldColumn ctermbg=151515
+		set columns=90
+	endif
+endfunc
+
+" Helper function for the following function
+function! Chomp(str)
+	return substitute(a:str, '\n$', '', '')
+endfunction
+
+" Use suckless's dmenu to implement a simple file browser.
+function! DmenuOpen(cmd)
+	let fname = Chomp(system("find . 2>/dev/null | dmenu -i -l 20 -fn '-*-profont-*-r-normal--12-*-*-*-*-*-*-*' -nb '#151515' -nf '#B8D68C' -sb '#151515' -sf '#E84F4F' -p " . a:cmd))
+	if empty(fname)
+		return
+	endif
+	execute a:cmd . " " . fname
+endfunction
+
+" Use ctrl-t to open file in a new tab
+map <c-t> :call DmenuOpen("tabe")<cr>
+
+" Plug-ins
+filetype off
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on

@@ -1,0 +1,44 @@
+background no
+out_to_console yes
+update_interval 0.3
+mpd_host 127.0.0.1
+mpd_port 6600
+
+# Network interface must have an ip address to be considered up
+if_up_strictness address
+
+TEXT
+[
+
+#highlight notifications
+{"name": "highlight", "color":"\#dddddd", "full_text":"${exec cat $HOME/.weechat/highlights.txt | cut -d ':' -f 1 | sed -e ':a;N;$!ba;s/\n/ /g'}"}, \
+
+#wireless up
+${if_up wlan1}{"name": "wifi", "icon":"/home/ifs/.icons/stlarch/wireless8.xbm", \
+"icon_color":"\#ff8d80", "color":"\#dddddd","full_text":"up ","separator": false}, \
+
+#wireless down
+${else}{"name":"wifi", "icon":"/home/ifs/.icons/stlarch/wireless10.xbm", \
+"icon_color":"\#d23d3d","color":"\#dddddd","full_text":"down ","separator": false}, ${endif} \
+
+#volume
+{"name": "volume", "icon":"/home/ifs/.icons/stlarch/vol1.xbm", "icon_color":"\#ffc04c","color":"\#dddddd", \
+"full_text":"${exec amixer sget Master | grep Front.Left: | awk '{print $5}' | sed -r 's:\[|\]::g'} ","separator": false}, \
+
+#load average
+{"name": "load", "icon":"/home/ifs/.icons/stlarch/cpu13.xbm", "icon_color":"\#ffff66","color":"\#dddddd", \
+"full_text":"${loadavg 1} ","separator": false}, \
+
+#mail
+{"name": "mail", "icon":"/home/ifs/.icons/stlarch/mail4.xbm", "icon_color":"\#66b266","color":"\#dddddd", \
+"full_text":"${execi 5 ls /home/ifs/mail/boxes/inbox/new | wc -w} ","separator": false}, \
+
+#date
+{"name": "time", "icon":"/home/ifs/.icons/stlarch/grid.xbm","icon_color":"\#6666ff", \
+"color": "\#dddddd","full_text": "${time %m.%d.%y} ","separator": false}, \
+
+#time
+{"name": "time", "icon":"/home/ifs/.icons/stlarch/clock2.xbm","icon_color":"\#f3a7f3", \
+"color": "\#dddddd","full_text": "${time %-l:%M %P}","separator": false}
+
+],

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ps cax | grep trayer > /dev/null
+if [ $? -eq 0 ]; then
+	killall trayer > /dev/null
+else
+	trayer --height 18 & > /dev/null
+fi

@@ -1,0 +1,156 @@
+[iconset]
+author: Screaming Bull and Mr. Brsev. MagIcons adaption by Alexibaba
+license: GPL
+version: 1
+about: Simple SVG Icon Theme for Gnome.
+
+[color_1]
+substitute: ececec
+text: Main, Light
+
+[color_2]
+substitute: 888888
+text: Main, Dark
+
+[color_3]
+substitute: ffffff
+text: Border, Light
+
+[color_4]
+substitute: 6a6a6a
+text: Border, Dark
+
+[color_5]
+substitute: 333333
+text: Shaddow
+
+[preview_1]
+path: magicons-preview/user-home.svg
+
+[preview_2]
+path: magicons-preview/x-office-presentation.svg
+
+[preview_3]
+path: magicons-preview/drive-optical.svg
+
+
+[scheme_1]
+name: Carbonite
+color_1: 888a85
+color_2: 747672
+color_3: 555753
+color_4: 2e3436
+color_5: 777777
+
+[scheme_2]
+name: Crimson
+color_1: e35d4f
+color_2: c6262e
+color_3: a53738
+color_4: a82027
+color_5: 777777
+
+[scheme_3]
+name: Dust
+color_1: c2a78c
+color_2: b49372
+color_3: 906e4c
+color_4: 745536
+color_5: 777777
+
+[scheme_4]
+name: Elementary
+color_1: 9cbbd9
+color_2: 5c82ab
+color_3: 7a91a7
+color_4: 425e7b
+color_5: 777777
+
+[scheme_5]
+name: Fire
+color_1: ff5c5c
+color_2: c30000
+color_3: a00000
+color_4: 690000
+color_5: 777777
+
+[scheme_6]
+name: Illustrious
+color_1: f9a1ac
+color_2: f08290
+color_3: dc6472
+color_4: c6464b
+color_5: 777777
+
+[scheme_7]
+name: Meadow
+color_1: d7e866
+color_2: 8cab2a
+color_3: 699536
+color_4: 51732a
+color_5: 777777
+
+[scheme_8]
+name: Noble
+color_1: bd97b9
+color_2: ad7fa8
+color_3: 75507b
+color_4: 5c3566
+color_5: 777777
+
+[scheme_9]
+name: Pomegranate
+color_1: f8b17e
+color_2: dd3b27
+color_3: c6262e
+color_4: a82027
+color_5: 777777
+
+[scheme_10]
+name: Sky
+color_1: 93b9dd
+color_2: 6396cd
+color_3: 387ab8
+color_4: 234d73
+color_5: 777777
+
+[scheme_11]
+name: Star
+color_1: fdef72
+color_2: e2cb0b
+color_3: d7c20f
+color_4: b6970d
+color_5: 777777
+
+[scheme_12]
+name: Tribute
+color_1: cccdbc
+color_2: bcbea7
+color_3: 9c9e8a
+color_4: 7d7e60
+color_5: 777777
+
+[scheme_13]
+name: Wine
+color_1: e47070
+color_2: df5757
+color_3: c22f2f
+color_4: a40000
+color_5: 777777
+
+[scheme_14]
+name: Wise
+color_1: aacb7d
+color_2: 97bf60
+color_3: 709937
+color_4: 51751e
+color_5: 777777
+
+[scheme_15]
+name: Humanity
+color_1: edd563
+color_2: e08223
+color_3: cd8033
+color_4: bb5e12
+color_5: 777777
+

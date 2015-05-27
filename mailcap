@@ -1,0 +1,5 @@
+text/html; elinks -dump -dump-charset iso-8859-15 -default-mime-type text/html %s; needsterminal; copiousoutput;
+image/*; feh -F %s;
+application/pdf; mupdf %s;
+video/*; mpv %s > /dev/null
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; libreoffice %s;

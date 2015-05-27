@@ -1,0 +1,47 @@
+inoremap <C-n> <Esc>:tabnext<Return>
+inoremap <C-p> <Esc>:tabprevious<Return>
+noremap q :back<Return>
+noremap w :forward<Return>
+noremap j 3j
+noremap k 3k
+noremap d :tabclose<Space>-select<Space>'lastactive'<Return>
+noremap <C-c> <C-v><C-c>
+noremap <C-v> <C-v><C-v>
+set sb=false
+set defsearch=startpage
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+set complete=flS
+set suggestengines=google
+set status=bookmark,history,input,location,position,tabcount
+
+hi Normal background: #151515; color:#dddddd; font-family: profont; font-size: 9pt;
+hi CmdLine background: #151515; color:#dddddd; font-family: profont; font-size: 9pt;
+hi CompGroup background: #151515; color:#dddddd;
+hi CompTitle background: #1c1b1c; 
+hi CompTitle>* color: #dddddd; padding: 1px 0.5ex;
+hi CompItem background:#151515; color:#dddddd;
+hi CompItem[selected] color:#7DC1CF; background: #262426;
+hi CompDesc width: 500px; max-width: 500px; color: #999999;
+hi CompIcon display: none; !important;
+hi CompMsg margin-left: 16px;font-family: profont; font-size: 9pt; background: #151515; color:#dddddd;
+hi ErrorMsg background: #151515; color: #dddddd; font-family: profont; font-size: 9pt;
+hi Filter color: #B8EE8C; background: #262426;
+hi StatusLine color: #dddddd; background: transparent; font-family: profont; font-size: 9pt;
+hi Hint  font-family: profont; font-size: 9pt; color: black; background-color: pink; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+hi Hint::after content: attr(number);
+hi HintActive background-color: white; color: gray; 
+hi HintElem background-color: gray; color: white;
+hi HintImage opacity: .5;
+hi URL text-decoration: none; color: #87FF00; font-family: profont; font-size: 9pt;
+hi ModeMsg color: white; background: #3E6700; border-radius: 1px; padding: 0px 5px;font-family: profont; font-size: 9pt;
+hi PromptText color: white; background: #860EFF;font-family: profont; font-size: 9pt;
+hi MoreMsg background-color: #151515; color: #87FF00;font-family: profont; font-size: 9pt;
+hi Tag color: #005F87;font-family: profont; font-size: 9pt;
+hi InfoMsg background: #151515; color: #87FF00;font-family: profont; font-size: 9pt;
+hi WarningMsg background: #151515; color: #E84f4f;font-family: profont; font-size: 9pt;
+hi Null color: #005F87;
+hi Number color: #005F87;
+hi NonText color: #B973FF; min-height: 16px; padding-left: 2px;
+hi Title background-color: #151515; color: #dddddd; 
+hi Indicator color: #dddddd; background-color: #151515;
+hi ContentSeparator border-top: 0px solid #262426; display: -moz-box;
