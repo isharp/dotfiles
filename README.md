@@ -40,12 +40,5 @@ themes/ -- A handful of tweaked gtk themes to match my colorscheme.
 
 
 ## License
-Feel free to do whatever you want to with them. Just so we're clear on what
-that means, read the licenses for these files, if you are so inclined.
-Default license if not otherwise specified: Latest WTFPL.
 
-Licence URI: http://sam.zoy.org/wtfpl/
-
-Caveat(s): the font-size script in the directory 'urxvt' carries its own license
-found in the script itself. That license applies to that file. The same goes for
-any other files that have their own license notice inside.
+Licence: http://sam.zoy.org/wtfpl/
