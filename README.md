@@ -37,8 +37,3 @@ mailcap -- Lists the MIME-type info for various user mail agents. I use mutt.
 icons/ -- Some of these icons are custom, and some are based on ACYL icons.
 
 themes/ -- A handful of tweaked gtk themes to match my colorscheme.
-
-
-## License
-
-Licence: http://sam.zoy.org/wtfpl/
